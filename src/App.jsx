@@ -119,7 +119,7 @@ function App() {
         <div className="conditions-card card"><div className="section-kicker">AT A GLANCE</div><h3>Today's conditions</h3><div className="condition-grid">
           <div className="condition-stat"><div className="stat-icon peach"><ThermometerSun size={18}/></div><div><span>Feels like</span><strong>{current ? `${tempValue(current.apparent_temperature)}°` : '—'}</strong></div></div>
           <div className="condition-stat"><div className="stat-icon blue"><Droplets size={18}/></div><div><span>Humidity</span><strong>{current ? `${current.relative_humidity_2m}%` : '—'}</strong></div></div>
-          <div className="condition-stat"><div className="stat-icon violet"><Wind size={18}/></div><div><span>Wind</span><strong>{current ? `${Math.round(current.wind_speed_10m)} <small>km/h</small>` : '—'}</strong></div></div>
+          <div className="condition-stat"><div className="stat-icon violet"><Wind size={18}/></div><div><span>Wind</span><strong>{current ? <>{Math.round(current.wind_speed_10m)} <small>km/h</small></> : '—'}</strong></div></div>
           <div className="condition-stat"><div className="stat-icon yellow"><Umbrella size={18}/></div><div><span>Rain chance</span><strong>{daily ? `${daily.precipitation_probability_max[0]}%` : '—'}</strong></div></div>
         </div><div className="sun-times"><div><Sunrise size={17}/><span>Sunrise</span><strong>{daily ? localTime(daily.sunrise[0], weather.timezone) : '—'}</strong></div><div><Sunset size={17}/><span>Sunset</span><strong>{daily ? localTime(daily.sunset[0], weather.timezone) : '—'}</strong></div></div></div>
       </section>
@@ -137,4 +137,5 @@ function App() {
   </main>
 }
 export default App
+
 
